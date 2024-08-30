@@ -15,7 +15,7 @@ class Journal {
   private var entries: [JournalEntry] = []
     
     
-    func addEntriy(title: String, notes: String, date: Date?) {
+    func addEntry(title: String, notes: String, date: Date?) {
         
         let newEntry = JournalEntry(title: title, notes: notes, date: date ?? Date())
         
@@ -81,7 +81,14 @@ class Journal {
     }
     
     
-    
+    /*
+    func toString(entry: JournalEntry) -> String {
+        
+        return "Titel: \(entry.title) Notes: \(entry.notes) Date: \(entry.date)"
+        
+        
+    }
+    */
     
     
     

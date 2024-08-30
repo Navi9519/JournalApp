@@ -11,18 +11,21 @@ class JournalTableViewController: UITableViewController {
     
     
     let journalCell = "journalCell"
+
     
-    let myJournal = Journal()
+    var journalData: Journal? = nil
+    
+
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+    
         
-    myJournal.addEntriy(title: "Plugga", notes: "Jag måste plugga", date: nil)
-    myJournal.addEntriy(title: "Sova", notes: "jag måste sova", date: nil)
         
-        
+        print(journalData?.getEntries())
 
         
     }
@@ -36,29 +39,49 @@ class JournalTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myJournal.getEntries().count
+        
+        if let journalData = journalData {
+            
+            return journalData.getEntries().count
+            
+        } else {
+            return 0
+        }
+                
+        
+        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: journalCell, for: indexPath)
 
         // sätter vaiabel content till cells default inehåll
         var content = cell.defaultContentConfiguration()
         
-        let entry = myJournal.getEntry(atIndex: indexPath.row)
+        if let journalData = journalData
+         {
+            
+            let entry = journalData.getEntry(atIndex: indexPath.row)
+           
+            // Ändra på innehållet.text till Hej
+            content.text = entry?.title
+            
+           
+            
+            // Sätter cellens content till nya updaterade content.text
+            cell.contentConfiguration = content
+
+            
+        }
         
-        
-        
-        // Ändra på innehållet.text till Hej
-        content.text = entry?.title
-        
+        return cell
        
         
-        // Sätter cellens content till nya updaterade content.text
-        cell.contentConfiguration = content
-
-        return cell
+        
+        
+       
     }
     
 
