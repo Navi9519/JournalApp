@@ -22,10 +22,7 @@ class JournalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-    
-        
-        
-        print(journalData?.getEntries())
+
 
         
     }
@@ -79,10 +76,12 @@ class JournalTableViewController: UITableViewController {
         return cell
        
         
-        
-        
        
     }
+    
+    
+    
+    
     
 
     /*

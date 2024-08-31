@@ -46,6 +46,9 @@ class AddJournalViewController: UIViewController {
     
     @IBAction func btnAddEntry(_ sender: UIButton) {
         addJournalEntry()
+        
+        titelTxt.text = ""
+        notesTxt.text = ""
     }
     
     
@@ -59,8 +62,7 @@ class AddJournalViewController: UIViewController {
     func addJournalEntry() {
         
         guard let title = titelTxt.text, !title.isEmpty,
-              let notes = notesTxt.text, !notes.isEmpty,
-              let date = dateTxt.text
+              let notes = notesTxt.text, !notes.isEmpty
         else {
             return
         }

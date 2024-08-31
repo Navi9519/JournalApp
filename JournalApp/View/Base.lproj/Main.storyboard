@@ -166,6 +166,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="sh0-iH-ERa"/>
         <segue reference="yND-ZF-Y4R"/>
     </inferredMetricsTieBreakers>
     <resources>
