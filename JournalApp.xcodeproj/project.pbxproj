@@ -16,6 +16,7 @@
 		966DA6742C8065D300F00B35 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DA6732C8065D300F00B35 /* Journal.swift */; };
 		966DA6772C80697800F00B35 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DA6762C80697800F00B35 /* JournalEntry.swift */; };
 		966DA6792C809B0000F00B35 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DA6782C809B0000F00B35 /* AddJournalViewController.swift */; };
+		96B4A1102C8309C7008C08EB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4A10F2C8309C7008C08EB /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		966DA6732C8065D300F00B35 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		966DA6762C80697800F00B35 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		966DA6782C809B0000F00B35 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
+		96B4A10F2C8309C7008C08EB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				966DA66F2C805AEF00F00B35 /* JournalTableViewController.swift */,
 				966DA6782C809B0000F00B35 /* AddJournalViewController.swift */,
+				96B4A10F2C8309C7008C08EB /* CustomTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				966DA65C2C8059DC00F00B35 /* AppDelegate.swift in Sources */,
 				966DA6702C805AEF00F00B35 /* JournalTableViewController.swift in Sources */,
 				966DA6792C809B0000F00B35 /* AddJournalViewController.swift in Sources */,
+				96B4A1102C8309C7008C08EB /* CustomTableViewCell.swift in Sources */,
 				966DA6772C80697800F00B35 /* JournalEntry.swift in Sources */,
 				966DA65E2C8059DC00F00B35 /* SceneDelegate.swift in Sources */,
 				966DA6742C8065D300F00B35 /* Journal.swift in Sources */,

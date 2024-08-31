@@ -9,6 +9,7 @@ import UIKit
 
 class JournalTableViewController: UITableViewController {
     
+    @IBOutlet weak var btnEdit: UIButton!
     
     let journalCell = "journalCell"
 
@@ -42,7 +43,7 @@ class JournalTableViewController: UITableViewController {
             return journalData.getEntries().count
             
         } else {
-            return 0
+            return 1
         }
                 
         
@@ -52,10 +53,12 @@ class JournalTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: journalCell, for: indexPath)
+        /*let cell = tableView.dequeueReusableCell(withIdentifier: journalCell, for: indexPath) */
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: journalCell) as! CustomTableViewCell
 
         // sätter vaiabel content till cells default inehåll
-        var content = cell.defaultContentConfiguration()
+       // var content = cell.defaultContentConfiguration()
         
         if let journalData = journalData
          {
@@ -63,12 +66,17 @@ class JournalTableViewController: UITableViewController {
             let entry = journalData.getEntry(atIndex: indexPath.row)
            
             // Ändra på innehållet.text till Hej
-            content.text = entry?.title
             
-           
+            cell.lblTitle.text = entry?.title
             
             // Sätter cellens content till nya updaterade content.text
-            cell.contentConfiguration = content
+            // cell.contentConfiguration = content
+            // #selector referear till metod som ska köras -> objective C kod
+            cell.btnEdit.tag = indexPath.row
+            cell.btnEdit.addTarget(self, action: #selector(editButtonsWasTapped(sender:)), for: .touchUpInside)
+            cell.btnRemove.tag = indexPath.row
+            cell.btnRemove.addTarget(self, action: #selector(removeButtonsWasTapped(sender:)), for: .touchUpInside)
+            
 
             
         }
@@ -81,6 +89,24 @@ class JournalTableViewController: UITableViewController {
     
     
     
+    @objc
+    func removeButtonsWasTapped(sender: UIButton) {
+        
+        // Gör något med datan på "row index"
+        let rowIndex: Int = sender.tag
+        
+        print(rowIndex)
+    }
+    
+   
+    @objc
+    func editButtonsWasTapped(sender: UIButton) {
+        
+        // Gör något med datan på "row index"
+        let rowIndex: Int = sender.tag
+        
+        print(rowIndex)
+    }
     
     
 
