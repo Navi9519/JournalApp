@@ -68,7 +68,7 @@ class AddJournalViewController: UIViewController {
         }
             
             myJournal.addEntry(title: title, notes: notes, date: Date() )
-            print(myJournal.getEntries())
+            //ä(myJournal.getEntries())
         
     }
     

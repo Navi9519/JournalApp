@@ -43,7 +43,7 @@ class JournalTableViewController: UITableViewController {
             return journalData.getEntries().count
             
         } else {
-            return 1
+            return 0
         }
                 
         
@@ -92,10 +92,31 @@ class JournalTableViewController: UITableViewController {
     @objc
     func removeButtonsWasTapped(sender: UIButton) {
         
-        // Gör något med datan på "row index"
+        // Gör något med datan på "row index" sender = btnRemove?
         let rowIndex: Int = sender.tag
         
-        print(rowIndex)
+            
+            guard let journalData = journalData
+            else  { return }
+        
+            
+        if let entry = journalData.getEntry(atIndex: rowIndex) {
+           
+            print(rowIndex)
+            print(journalData.getEntries().count)
+            
+            journalData.deleteEntryByID(id: entry.id)
+            
+            print(rowIndex)
+            print(journalData.getEntries().count)
+            
+         tableView.reloadData()
+            
+         //tableView.deleteRows(at: [IndexPath(row: rowIndex, section: 0)], with: .automatic)
+           
+        }
+           // print(journalData.getEntries())
+    
     }
     
    

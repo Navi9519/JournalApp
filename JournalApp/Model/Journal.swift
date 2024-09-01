@@ -59,6 +59,12 @@ class Journal {
         
     }
     
+    func deleteEntryByIndex(atIndex: Int) {
+        
+        entries.remove(at: atIndex)
+        
+    }
+    
     // !!!! KOLLA DEN HÄR !!!! /// för guard let och if let förståelse -> Kolla video också 11:35 
     func updateEntrysById(id: String, title: String?, notes: String?) {
         
